@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="gets-blurred">
+
+<h2>
+    You've been invited to join a Wiki Wall Street game!
+</h2>
+
+<p>
+    Wiki Wall Street is <b>"the stock market game but for Wikipedia articles"</b>
+</p>
+<p>
+  Here, you have fake money to <b>buy and sell Wikipedia article "stocks"</b>
+  -- the price of the articles are the number of <b>page views</b> that the article gets that day.
+  If you're able to <b>predict trends in the popularity</b> of Wikipedia articles, you'll make more (fake) money!
+</p>
+<p>
+  Create or join a game with your friends! Visit the <a href="{{ url_for('main.index') }}">home page</a> for more information about how to play!
+</p>
+
+<div id="game-information">
+    <p>Loading game information <img class="inline-image" src="{{ url_for('static', filename='img/loading.gif') }}" alt="Loading..."></p>
+</div>
+
+{% if current_user.is_authenticated %}
+
+<button id="join-game-button" class="btn btn-success" disabled="true" data-toggle="modal" data-target="#join-game-modal"><i class="bi-person-plus"></i> Join Game</button>
+
+{% else %}
+
+<h2>Log in or sign up to join the game!</h2>
+<button id="login-button" class="btn btn-primary">Log in</button>
+<button id="signup-button" class="btn btn-primary">Sign up</button>
+
+{% endif %}
+
+</div>
+
+{% include "modals/join-game.html" %}
+
+<!-- SCRIPT FOR REDIRECTS AND LOADING GAME INFO ON THE PAGE :) -->
+<!-- modals/join-game.html also contains its own logic -->
+<script src="{{ url_for('static', filename='js/invite-page.js') }}"></script>
+
+{% endblock %}
+
