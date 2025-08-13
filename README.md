@@ -20,7 +20,6 @@ It's also not super consistent and not all pageviews data are updated at the sam
 
 # How do I play?
 
-Try it out at [wiki-wall-street.com](https://wiki-wall-street.com)!
 
 Make an account and log in, then **create** a new game for you and your friends or **join** a one! Join a private game with its **Game ID** or an **invite link**. You can join a public game by finding one in the table!
 
